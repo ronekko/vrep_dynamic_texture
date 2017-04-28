@@ -56,11 +56,13 @@ class Vrep(object):
 
 
 if __name__ == '__main__':
-    simulator = Vrep()
-    vision1 = 'Vision_sensor'
-    simulator.register_handle(vision1)
-
+    # Resolution of image. These must correspond to `Resolution X / Y` of
+    # vision sensor (Scene Object Properties -> Main properties)
     image_width, image_height = 128, 128
+
+    simulator = Vrep()
+    vision1 = 'Vision_sensor'  # name of the vision sensor in V-rep
+    simulator.register_handle(vision1)
 
     for i in range(10000):
         # example 1: random noise
@@ -84,5 +86,5 @@ if __name__ == '__main__':
 #        image = image.reshape((image_height, image_width, 3))
 
         simulator.set_image(vision1, image)
-        simulator.send()
+        simulator.send()  # advance 1 time-step in the simulator
         print(i)
