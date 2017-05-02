@@ -8,7 +8,7 @@ Python上で作成した画像（動画）を，v-repのシリンダオブジェ
 
 ## 実行方法
 1. `launch_vrep.bat` を実行すると，v-repが起動し `simple.ttt` が読み込まれます．
-2. `python main.py` を実行する，あるいはspyder上で 'main.py'を実行すると，v-rep内のシリンダーにpythonから送られた画像が表示されます．
+2. `python main.py` を実行する，あるいはspyder上で `main.py` を実行すると，v-rep内のシリンダーにpythonから送られた画像が表示されます．
 
 ## 仕組み
 次の2つを組合せることで，Python側で用意した画像をv-repのシェイプに表示することができます．
@@ -31,3 +31,8 @@ Python上で作成した画像（動画）を，v-repのシリンダオブジェ
 - [simxSetVisionSensorImage関数](http://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm#simxSetVisionSensorImage)を使うことで，任意の画像をビジョンセンサが見たことにできます．
 - 注意点として，v-rep内のビジョンセンサの解像度の設定値と，Pythonから送信する画像データの画素数が一致している必要があります．
     - ビジョンセンサの解像度は，ビジョンセンサのScene Object Propertiesから設定できます．
+
+### 参考資料
+- http://www.forum.coppeliarobotics.com/viewtopic.php?f=9&t=799
+- http://www.coppeliarobotics.com/helpFiles/en/textureDialog.htm
+- http://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm#simxSetVisionSensorImage
