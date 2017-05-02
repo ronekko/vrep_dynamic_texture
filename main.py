@@ -58,7 +58,7 @@ class Vrep(object):
 if __name__ == '__main__':
     # Resolution of image. These must correspond to `Resolution X / Y` of
     # vision sensor (Scene Object Properties -> Main properties)
-    image_width, image_height = 128, 128
+    image_width, image_height = 100, 314
 
     simulator = Vrep()
     vision1 = 'Vision_sensor'  # name of the vision sensor in V-rep
