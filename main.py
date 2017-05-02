@@ -69,17 +69,28 @@ if __name__ == '__main__':
         image = np.random.randint(
             0, 255, size=(image_width, image_height, 3), dtype=np.uint8)
 
-#        # example 2: moving ball
-#        theta = np.pi * float(i) / 60
-#        r = (np.sin(theta / 4) + 1) / 2.0
-#        x = r * np.cos(theta)
-#        y = r * np.sin(theta)
-#        fig = Figure(figsize=(image_height / 100.0, image_width / 100.0))
-#        ax = fig.gca()
-#        ax.plot(x, y, '.', markersize=20)
-#        ax.set_ylim(-1, 1)
-#        ax.set_xlim(-1, 1)
-#        ax.set_aspect('equal', adjustable='box')
+#        # example 2: moving ball on sin curve
+#        n_points = 30
+#        x = np.linspace(-5, 5, n_points)
+#        y = np.sin(x)
+#        t = i % n_points
+#        x_t, y_t = x[t], y[t]
+#
+#        fig = plt.figure(figsize=(image_height / 100.0, image_width / 100.0))
+#        plt.plot(x, y)
+#        plt.plot(x_t, y_t, 'co', markersize=15)
+#
+#        # Draw the origin and the bases
+#        plt.plot(0, 0, 'ko', markersize=10)
+#        plt.plot([0, 1], [0, 0], 'r')
+#        plt.plot([0, 0], [0, 1], 'g')
+#
+#        # Remove tick labels
+#        plt.tick_params(axis='both', which='both', direction='in',
+#                        labelbottom='off', labelleft='off')
+#        plt.grid()
+#        plt.gca().set_aspect('equal', adjustable='box')
+#
 #        canvas = FigureCanvasAgg(fig)
 #        canvas.draw()
 #        image = np.fromstring(canvas.tostring_rgb(), dtype='uint8')
